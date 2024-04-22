@@ -48,6 +48,11 @@ int main(void)
   // Close the file
   fclose(fptr);
 
+  // Free data
+  free(newData1);
+  free(newData2);
+  free(newData3);
+
   return 0;
 }
 
@@ -135,4 +140,7 @@ void printData(FILE *fptr)
   {
     printf("[DATA]\nID: %d\nValue: %d\n\n", data[i].id, data[i].value);
   }
+
+  // Free memory
+  free(data);
 }
